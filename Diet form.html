@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Balanced Plate - Wellness Log</title>
+</head>
+<body>
+</ht>
+    <h1>🧘‍♀️ “My Balanced Plate” — Daily Diet & Wellness Log</h1>
+  <p><em>Track your meals, emotions, and essential nutrition — all in one mindful check-in.</em></p>
+  <form>
+  <fieldset>
+    <legend>👤 Personal Info</legend>
+    <label for="name">Name:</label>
+    <input type="text"  placeholder="Enter your name" id="name" name="name" required><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" placeholder="Enter your age" id="age" name="age" min="1"><br><br>
+
+    <label for="goal">Lifestyle Goal:</label>
+    <select id="goal" name="goal">
+      <option>Weight Loss</option>
+      <option>Energy Boost</option>
+      <option>Muscle Gain</option>
+      <option>Healthy Habit Building</option>
+    </select>
+  </fieldset>
+</form>
+<fieldset>
+  <legend>🍽️ Meal + Mood + Nutrition</legend>
+
+  <table border="1">
+    <tr>
+      <th>Meal</th>
+      <th>What I Ate</th>
+      <th>Mood After Eating</th>
+      <th>Calories (kcal)</th>
+      <th>Protein (g)</th>
+    </tr>
+
+    <tr>
+      <td>Breakfast</td>
+      <td><input type="text" name="breakfast_food"></td>
+      <td>
+        <input type="radio" name="breakfast_mood"> 😊
+        <input type="radio" name="breakfast_mood"> 😐
+        <input type="radio" name="breakfast_mood"> 😞
+      </td>
+      <td><input type="number" name="breakfast_calories"></td>
+      <td><input type="number" name="breakfast_protein"></td>
+    </tr>
+
+    <tr>
+      <td>Lunch</td>
+      <td><input type="text" name="lunch_food"></td>
+      <td>
+        <input type="radio" name="lunch_mood"> 😊
+        <input type="radio" name="lunch_mood"> 😐
+        <input type="radio" name="lunch_mood"> 😞
+      </td>
+      <td><input type="number" name="lunch_calories"></td>
+      <td><input type="number" name="lunch_protein"></td>
+    </tr>
+
+    <tr>
+      <td>Dinner</td>
+      <td><input type="text" name="dinner_food"></td>
+      <td>
+        <input type="radio" name="dinner_mood"> 😊
+        <input type="radio" name="dinner_mood"> 😐
+        <input type="radio" name="dinner_mood"> 😞
+      </td>
+      <td><input type="number" name="dinner_calories"></td>
+      <td><input type="number" name="dinner_protein"></td>
+    </tr>
+
+    <tr>
+      <td>Snacks</td>
+      <td><input type="text" name="snacks_food"></td>
+      <td>
+        <input type="radio" name="snacks_mood"> 😊
+        <input type="radio" name="snacks_mood"> 😐
+        <input type="radio" name="snacks_mood"> 😞
+      </td>
+      <td><input type="number" name="snacks_calories"></td>
+      <td><input type="number" name="snacks_protein"></td>
+    </tr>
+  </table>
+</fieldset>
+<fieldset>
+  <legend>💧 Water & Activity Check</legend>
+
+  <label>How many glasses of water did you drink today?</label><br>
+  <input type="number" name="water_glasses" min="0" max="20"><br><br>
+
+  <label>Did you move your body today?</label><br>
+  <input type="checkbox" name="activity_walk"> 🚶‍♀️ Walk<br>
+  <input type="checkbox" name="activity_exercise"> 🏋️‍♂️ Exercise<br>
+  <input type="checkbox" name="activity_yoga"> 🧘 Yoga<br>
+  <input type="checkbox" name="activity_none"> 😴 Didn't move much<br><br>
+
+  <label for="mindful_note">Write one peaceful or mindful moment you had today:</label><br>
+  <textarea id="mindful_note" name="mindful_note" rows="3" cols="50" placeholder="e.g., I sat quietly for 5 mins before breakfast..."></textarea>
+</fieldset>
+<fieldset>
+  <legend>Sleep and Energy Reflection</legend>
+
+  <label for="sleep_duration">How many hours did you sleep last night?</label><br>
+  <input type="number" id="sleep_duration" name="sleep_duration" min="0" max="24"><br><br>
+
+  <label>How refreshed did you feel upon waking?</label><br>
+  <input type="radio" name="sleep_quality" value="very_refreshed"> Very refreshed<br>
+  <input type="radio" name="sleep_quality" value="somewhat_refreshed"> Somewhat refreshed<br>
+  <input type="radio" name="sleep_quality" value="tired"> Tired<br><br>
+
+  <label for="energy_level">How was your overall energy today?</label><br>
+  <select id="energy_level" name="energy_level">
+    <option value="">-- Select one --</option>
+    <option value="high">High</option>
+    <option value="moderate">Moderate</option>
+    <option value="low">Low</option>
+  </select><br><br>
+
+  <label for="sleep_notes">Optional: Describe anything that affected your sleep or energy (e.g., screen time, stress):</label><br>
+  <textarea id="sleep_notes" name="sleep_notes" rows="3" cols="50"></textarea>
+</fieldset>
+<fieldset>
+  <legend>🌟 Daily Reflection & Closing</legend>
+
+  <p><b>💭 One word that describes your day:</b></p>
+  <input type="text" name="day_summary" placeholder="e.g., productive, relaxed"><br><br>
+
+  <p><b>📝 Write a kind note to yourself:</b></p>
+  <textarea name="self_note" rows="4" cols="50" placeholder="You showed up today — and that matters. Great job! 💪"></textarea><br><br>
+
+  <p><b>🎯 Did you meet your wellness goal today?</b></p>
+  <input type="radio" name="goal_met" value="yes"> Yes<br>
+  <input type="radio" name="goal_met" value="no"> Not yet, but I'm trying<br><br>
+
+  <p><b>📅 Are you ready to commit to another check-in tomorrow?</b></p>
+  <input type="checkbox" name="commit_tomorrow" value="yes"> Yes, I’ll show up again!<br><br>
+
+  <p>🌈 Every step counts. Be proud of your effort today.</p>
+</fieldset>
+
+<br>
+<p align="center">
+  <button type="submit">✅ Submit My Wellness Log</button>
+</p>
+
+<h5><i>About Developer</i></h5>
+<p><i>Built by Siva Nandini — proving that a little code can go a long way in staying healthy and mindful.</i></p>
+<p>
+  <img src="WhatsApp Image 2025-07-28 at 6.40.14 PM.jpeg" alt="Nandini Reddy" width="150">
+</p>
+<p><strong>Healthy Habit Reminders:</strong></p>
+<p>
+  <img src="1.jpg" alt="Eat Healthy" class="habit-img">
+  <img src="image.png" alt="Exercise" class="habit-img">
+  <img src="6-benefits-of-sleeping-well.webp" alt="Sleep Well" class="habit-img">
+</p>
+<script>
+   
+   let userName = "Nandini";             
+   let totalCalories = 1800;            
+   let goalMet = true;                   
+   let mood = null;                     
+
+   document.write("<h3>🧠 JS Data Types Demo</h3>");
+   document.write("String: " + userName + "<br>");
+   document.write("Number: " + totalCalories + "<br>");
+   document.write("Boolean: " + goalMet + "<br>");
+   document.write("Null: " + mood + "<br><hr>");
+</script>
+</body>
+
+
+
+
+
