@@ -131,6 +131,144 @@
         font-size: 0.75rem;
       }
     }
+    /* Good Habits gallery: uniform size and captions */
+    fieldset:nth-of-type(8) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      justify-items: center;
+    }
+    .habit {
+      margin: 0;
+      padding: 10px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .habit img {
+      width: 220px;
+      height: 150px;
+      object-fit: cover;
+      margin: 0;
+      border-radius: 10px;
+    }
+    .habit figcaption {
+      margin-top: 8px;
+      font-weight: 600;
+      color: #2d6a4f;
+    }
+    /* Enhancements */
+    html { scroll-behavior: smooth; }
+
+    legend {
+      background: #e9f5ef;
+      border-radius: 999px;
+      padding: 6px 12px;
+    }
+
+    fieldset {
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    fieldset:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #8aa39b;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      accent-color: #40916c;
+      cursor: pointer;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    table tr:nth-child(even) { background: #f4fbf7; }
+    table tr:hover td { background: #e8f5ef; }
+
+    /* Make wide tables scroll on small screens */
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      body { background: linear-gradient(135deg, #0b3d2e, #124f3b); color: #e8f5ef; }
+      p { color: #cfe9dd; }
+      fieldset { background: #163a2fdd; }
+      legend { background: #0f2f25; color: #e8f5ef; }
+      input, select, textarea { background: #0f2f25; color: #e8f5ef; border-color: #2a6b55; }
+      input:focus, select:focus, textarea:focus { border-color: #74c69d; box-shadow: 0 0 6px rgba(116,198,157,0.6); }
+      table th { background: #2a6b55; }
+      table td { border-color: #2a6b55; }
+      table tr:nth-child(even) { background: #11382e; }
+      table tr:hover td { background: #0f3028; }
+    }
+
+    /* Print-friendly styles */
+    @media print {
+      body { background: #fff; color: #000; }
+      fieldset { box-shadow: none; background: #fff; }
+      img { box-shadow: none; }
+    }
+
+    /* Decorative header underline */
+    h1 { position: relative; }
+    h1::after {
+      content: ""; display: block; width: 80px; height: 4px; margin: 10px auto 0; border-radius: 2px;
+      background: linear-gradient(90deg, #2d6a4f, #74c69d);
+    }
+
+    /* Focus-visible accessibility */
+    :focus-visible { outline: 3px solid rgba(64,145,108,0.5); outline-offset: 2px; }
+
+    /* Sticky table header (uses first row) */
+    table tr:first-child th { position: sticky; top: 0; z-index: 1; }
+
+    /* Text selection */
+    ::selection { background: #b7e4c7; color: #1b4332; }
+
+    /* Scrollbar styling */
+    *::-webkit-scrollbar { height: 10px; width: 10px; }
+    *::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 8px; }
+    *::-webkit-scrollbar-thumb { background: #74c69d; border-radius: 8px; }
+    *::-webkit-scrollbar-thumb:hover { background: #52b788; }
+    * { scrollbar-width: thin; scrollbar-color: #74c69d rgba(0,0,0,0.05); }
+
+    /* Basic validation states */
+    input:invalid, select:invalid, textarea:invalid { border-color: #e76f51; }
+    input:valid, select:valid, textarea:valid { border-color: #52b788; }
+
+    /* Ensure Step 3 and Step 4 use the standard boxed card style */
+    fieldset:nth-of-type(3),
+    fieldset:nth-of-type(4) {
+      background: #ffffffcc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 15px;
+    }
+    fieldset:nth-of-type(3) label,
+    fieldset:nth-of-type(4) label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      font-weight: normal;
+      margin: 0 12px 0 0;
+    }
+    /* Inputs use default styles; layout controlled by labels above */
+
+    
   </style>
 </head>
 <body>
@@ -140,7 +278,7 @@
 
   <!-- Step 1 -->
   <fieldset>
-    <legend>Step 1: Personal Information</legend>
+    <legend>Personal Information</legend>
     <label>Name:</label>
     <input type="text" name="name">
     <label>Age:</label>
@@ -155,7 +293,7 @@
 
   <!-- Step 2 -->
   <fieldset>
-    <legend>Step 2: Calorie & Mood Tracking</legend>
+    <legend>Calorie & Mood Tracking</legend>
     <p>Log your calorie intake and how you feel:</p>
     <table>
       <tr>
@@ -179,7 +317,7 @@
 
   <!-- Step 3 -->
   <fieldset>
-    <legend>Step 3: Nutrition & Well-being</legend>
+    <legend>Nutrition & Well-being</legend>
     <p>Did you consume proteins, vitamins, and enough water today?</p>
     <label><input type="checkbox"> Proteins</label>
     <label><input type="checkbox"> Vitamins</label>
@@ -188,7 +326,7 @@
 
   <!-- Step 4 -->
   <fieldset>
-    <legend>Step 4: Physical & Mental Wellness</legend>
+    <legend>Physical & Mental Wellness</legend>
     <p>Choose what you experienced today:</p>
     <label><input type="radio" name="wellness"> Active & Energized</label>
     <label><input type="radio" name="wellness"> Slight Fatigue</label>
@@ -198,13 +336,13 @@
 
   <!-- Step 5 -->
   <fieldset>
-    <legend>Step 5: Notes & Reflections</legend>
+    <legend>Notes & Reflections</legend>
     <textarea rows="4" placeholder="Write about your meals or habits..."></textarea>
   </fieldset>
 
   <!-- Step 6 -->
   <fieldset>
-    <legend>Step 6: Conclusion</legend>
+    <legend> Conclusion</legend>
     <p>🌱 A balanced diet fuels not just the body, but also the mind. Small daily habits lead to long-term wellness.</p>
   </fieldset>
 
@@ -218,9 +356,18 @@
   <!-- Good Habits Images -->
   <fieldset>
     <legend>Good Habits</legend>
-    <img src="https://img.freepik.com/free-photo/healthy-food-background_1150-38014.jpg" alt="Eating Healthy">
-    <img src="image.png" alt="Exercise">
-    <img src="6-benefits-of-sleeping-well.webp" alt="Proper Sleep">
+    <figure class="habit">
+      <img src="https://img.freepik.com/free-photo/healthy-food-background_1150-38014.jpg" alt="Eating Healthy">
+      <figcaption>Eat healthy food</figcaption>
+    </figure>
+    <figure class="habit">
+      <img src="image copy.png" alt="Exercise">
+      <figcaption>Do exercise</figcaption>
+    </figure>
+    <figure class="habit">
+      <img src="image copy 2.png" alt="Proper Sleep">
+      <figcaption>Sleep well</figcaption>
+    </figure>
   </fieldset>
 
 </body>
